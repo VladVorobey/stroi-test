@@ -1,0 +1,33 @@
+---
+title: Test
+
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	{% include "components/_nav.html" %}
+  {% include "components/_first-screen.html" %}
+  {% include "components/_facts.html" %}
+  {% include "components/_info-screen.html" %}
+  <!--{# variable example #}-->
+
+  <!--<h1 class="container">{{ lorem }}</h1>-->
+
+
+	<!--{# partial example #}-->
+
+	<!--{% include "partials/_header.html" %}-->
+
+	<!--{# mixin example #}-->
+	<!--{{mixins.icon('facebook')}}-->
+
+
+	<!--{# data usage example #}-->
+		<!--{% import "data/data.html" as tests %}-->
+
+		<!--{% for test in tests.list %}-->
+		<!--<li>{{test.title}}</li>-->
+		<!--{% endfor %}-->
+	<!--{# end of example #}-->
+
+{% endblock %}

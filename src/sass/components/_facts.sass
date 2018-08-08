@@ -1,0 +1,63 @@
+.facts
+	&__wrap
+		width: 100%
+		position: relative
+		min-height: 360px
+		padding: 5px
+	.title
+		text-align: center
+		padding: 60px 0 60px
+		font-size: 36px
+		line-height: 0px
+		font-family: $third-font
+		color: $sixth-text-color
+.block
+	display: block
+	img
+		position: absolute
+		top: 0
+
+	h4
+		padding: 35px 0 20px 100px
+		color: $fourth-text-color
+		line-height: 0
+		font-size: 30px
+	p
+		font-size: 14px
+		line-height: 21px
+		padding: 0px 0 30px 100px
+		color: $third-text-color
+	&--first
+		img
+			left: 46px
+	&--second
+		img
+			left: 39px
+	&--third
+		img
+			left: 41px
+			top: 10px
+	&::before, &::after
+		position: absolute
+		content: ''
+	&::before
+		width: 21px
+		height: 20px
+		border-left: 1px solid $facts-border
+		border-bottom: 1px solid $facts-border
+		bottom: 0
+		left: 0
+	&::after
+		width: 270px
+		height: 77px
+		border-right: 1px solid $facts-border
+		border-top: 1px solid $facts-border
+		top: 0
+		right: 0
+.blue-circle
+	width: 70px
+	height: 70px
+	position: absolute
+	background-color: $third-color
+	border-radius: 100px
+	top: 10px

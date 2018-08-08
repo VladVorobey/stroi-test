@@ -1,0 +1,5 @@
+ProjectTitle: 100-platkov
+
+PageList:
+- file: page.html
+  ready: 50

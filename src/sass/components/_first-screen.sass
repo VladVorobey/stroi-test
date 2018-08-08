@@ -1,0 +1,94 @@
+.first-screen
+	position: relative
+	width: 100%
+	min-height: 670px
+	z-index: 1
+	background-color: $second-color
+
+	.item
+		&--left
+			color: #fff
+			.blue-but
+				margin: 88px 0 39px
+				p
+					padding: 7px
+					width: 136px
+					height: 32px
+					font-size: 11px
+					text-align: center
+					text-transform: uppercase
+					font-family: $third-font
+					background: $third-color
+					border-radius: 50px
+					&::before
+						content: '«'
+					&::after
+						content: '»'
+			h1
+				font-family: $second-font
+				font-size: 64px
+				text-transform: uppercase
+				line-height: 1.313em
+				font-weight: 100
+				padding-left: 4px
+			h2
+				padding-top: 66px
+				font-size: 28px
+				font-family: $second-font
+				font-weight: 100
+		&--right
+			background-color: $second-color
+			min-height: 670px
+			font-family: $second-font
+			h3
+				font-size: 32px
+				font-weight: 100
+				line-height: 1.25em
+				padding: 75px 0 0 50px
+			.text--grey
+				padding: 20px 0 21px 50px
+				color: $third-text-color
+			.form
+
+				label, input
+					display: block
+				label
+					padding: 20px 0 10px 50px
+					font-family: $default-font
+					font-weight: 400
+					font-size: 13px
+					color: $form-color-label
+				input
+					margin: auto
+					width: 255px
+					height: 55px
+					padding-left: 20px
+					border: 1px solid #e1e7e8
+				.form-button
+					margin-top: 40px
+					border-style: solid;
+					border-width: 2px;
+					border-color: rgb(255, 187, 28);
+					border-radius: 25px;
+					background-image: -moz-linear-gradient( -90deg, rgb(241,209,23) 0%, rgb(225,88,12) 100%);
+					background-image: -webkit-linear-gradient( -90deg, rgb(241,209,23) 0%, rgb(225,88,12) 100%);
+					background-image: -ms-linear-gradient( -90deg, rgb(241,209,23) 0%, rgb(225,88,12) 100%);
+					box-shadow: 0px 10px 20px 0px rgba(208, 162, 28, 0.3);
+					font-family: $third-font
+					color: $eighth-text-color
+					text-transform: uppercase
+					text-align: center
+					&:hover
+						margin-top: 43px
+						box-shadow: 10px 10px 20px 0px rgba(208, 162, 28, 0.8);
+
+.bg-image
+		position: absolute
+		top: 0
+		right: 0
+		background: url("../../img/fs-bg.png") no-repeat center
+		width: 100%
+		transform: translateX(-21vw)
+		min-height: 670px
+		z-index: -1
+
