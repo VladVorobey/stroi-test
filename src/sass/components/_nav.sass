@@ -7,6 +7,7 @@
 	&__elem
 		&--first
 			padding-top: 23px
+			display: block
 			.bg-blue
 				background: $third-color
 				color: $main-color
@@ -25,56 +26,120 @@
 				color: $fifth-text-color
 				font-size: 12px
 				margin-top: 11px
-
 		&--second
 			padding: 43px
+			display: inline-block
+			+r(1200)
+				padding: 20px
+			+r(995)
+				padding: 0
+
+			.menu
+				font-size: 15px
+				text-align: center
+				+r(995)
+					display: none
+				li
+					display: inline
+					margin-left: 42px
+					width: 20px
+					position: relative
+					cursor: pointer
+
+					&:first-child
+						margin-left: 20px
+					a
+						color: $second-text-color
+						+r(995)
+							display: block
+					&::before
+						position: absolute
+						content: ''
+						bottom: -8px
+						width: 100%
+						height: 2px
+						background: $seventh-text-color
+						opacity: 0
+						transition: opacity 0.5s, transform 0.5s
+					&::before
+						left: 0
+						transform: translateX(-100%)
+					&:active, &:hover
+						&::before
+							transform: translate(0)
+							opacity: 1
+			.menu-expanded
+				+r(995)
+					display: block
+					width: 100%
+					height: 100%
+					border-radius: 0;
+					background: blue
+					top: 0;
+					right: 0;
+					overflow: scroll
+					transition: all .25s
+			.menu-collapsed
+				display: none
+				+r(995)
+					display: block
+					width: 50px
+					height: 50px
+					background: red
+					position: fixed
+					bottom: 10px
+					right: 10px
+					z-index: 99
+					border-radius: 50px
+					.bar
+						position: fixed
+						transition: all .25s
+						content: ""
+						bottom: 35px
+						right: 15px
+						height: 3px
+						width: 40px
+						background-color: #f1f1f1
+						&::before, &::after
+							transition: all .25s
+							content: ""
+							position: absolute
+							right: 0
+							height: 3px
+							width: 40px
+							background-color: #f1f1f1
+						&::before
+							bottom: 8px
+						&::after
+							bottom: -8px
+					.menu--list
+						display: none
+
 		&--third
 			padding-top: 35px
 			text-align: right
+			height: 100%
+			position: relative
+			+r(1200)
+				padding: 5px 0 10px
+
 			.tel-num
+				display: block
 				a
 					font-size: 18px
 					color: $sixth-text-color
 			.call
 				line-height: 0px
 				padding-top: 6px
+				display: block
 				a
 					text-decoration: underline
 					color: $third-color
 					font-size: 12px
-
-.menu
-	font-size: 15px
-	text-align: center
-	li
-		display: inline
-		margin-left: 42px
-		width: 20px
-		position: relative
-		cursor: pointer
-		&:first-child
-			margin-left: 20px
-		a
-			color: $second-text-color
-		&::before
-			position: absolute
-			content: ''
-			bottom: -8px
-			width: 100%
-			height: 2px
-			background: $seventh-text-color
-			opacity: 0
-			transition: opacity 0.5s, transform 0.5s
-		&::before
-			left: 0
-			transform: translateX(-100%)
-		&:active, &:hover
-			&::before
-				transform: translate(0)
-				opacity: 1
-
-
-
+					display: block
+					min-height: 10px
+					+r(1200)
+						text-align: center
 
 
 
