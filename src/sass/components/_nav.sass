@@ -29,6 +29,7 @@
 		&--second
 			padding: 43px
 			display: inline-block
+			position: relative
 			+r(1200)
 				padding: 20px
 			+r(995)
@@ -37,68 +38,96 @@
 			.menu
 				font-size: 15px
 				text-align: center
-				+r(995)
-					display: none
-				li
-					display: inline
-					margin-left: 42px
-					width: 20px
-					position: relative
-					cursor: pointer
+				&__list
+					+r(995)
+						display: block
+						position: fixed
+						z-index: 50
+						transition: all 0.7s
+						border-radius: 50px
+						width: 50px
+						height: 50px
+						background: $third-color
+						bottom: 10px
+						right: 10px
+						transform: translate(100vw, 100vh)
 
-					&:first-child
-						margin-left: 20px
-					a
-						color: $second-text-color
-						+r(995)
+						&--active
 							display: block
-					&::before
-						position: absolute
-						content: ''
-						bottom: -8px
-						width: 100%
-						height: 2px
-						background: $seventh-text-color
-						opacity: 0
-						transition: opacity 0.5s, transform 0.5s
-					&::before
-						left: 0
-						transform: translateX(-100%)
-					&:active, &:hover
+							width: 100%
+							height: 100vh
+							position: fixed
+							right: 0
+							top: 0
+							transform: translate(0, 0)
+							background: $second-color
+							z-index: 50
+							transition: all 0.3s
+							border-radius: 0
+
+					li
+						display: inline
+						margin-left: 42px
+						width: 20px
+						position: relative
+						cursor: pointer
+						+r(995)
+							display: flex
+							margin: 9% 0
+							width: 100%
+							text-align: center
+							justify-content: space-around
+							font-size: 20px
+							a
+								color: $third-color
+
+						&:first-child
+							margin-left: 20px
+							+r(995)
+								margin: 3% 0 0
+
+						a
+							color: $second-text-color
+							+r(995)
+								display: block
 						&::before
-							transform: translate(0)
-							opacity: 1
-			.menu-expanded
-				+r(995)
-					display: block
-					width: 100%
-					height: 100%
-					border-radius: 0;
-					background: blue
-					top: 0;
-					right: 0;
-					overflow: scroll
-					transition: all .25s
-			.menu-collapsed
+							position: absolute
+							content: ''
+							bottom: -8px
+							width: 100%
+							height: 2px
+							background: $seventh-text-color
+							opacity: 0
+							transition: opacity 0.5s, transform 0.5s
+						&::before
+							left: 0
+							transform: translateX(-100%)
+						&:active, &:hover
+							&::before
+								transform: translate(0)
+								opacity: 1
+
+			.menu__collapsed
 				display: none
 				+r(995)
 					display: block
 					width: 50px
 					height: 50px
-					background: red
+					background: $third-color
 					position: fixed
 					bottom: 10px
 					right: 10px
 					z-index: 99
 					border-radius: 50px
+					transition: all .3s
 					.bar
 						position: fixed
 						transition: all .25s
 						content: ""
 						bottom: 35px
-						right: 15px
+						right: 18px
 						height: 3px
-						width: 40px
+						width: 33px
 						background-color: #f1f1f1
 						&::before, &::after
 							transition: all .25s
@@ -106,14 +135,48 @@
 							position: absolute
 							right: 0
 							height: 3px
-							width: 40px
+							width: 33px
 							background-color: #f1f1f1
 						&::before
 							bottom: 8px
 						&::after
 							bottom: -8px
-					.menu--list
-						display: none
+				&--active
+					display: none
+					+r(995)
+						display: block
+						width: 50px
+						height: 50px
+						background: $second-color
+						position: fixed
+						bottom: 10px
+						right: 10px
+						z-index: 99
+						border-radius: 50px
+						transition: all .3s
+						.bar
+							position: fixed
+							transition: all .25s
+							content: ""
+							bottom: 35px
+							right: 15px
+							height: 3px
+							width: 40px
+							background-color: $second-color
+							&::before, &::after
+								transition: all .5s
+								content: ""
+								position: absolute
+								right: 0
+								height: 3px
+								width: 40px
+								background-color: $third-color
+							&::before
+								transform: rotate(135deg);
+								bottom: 0
+							&::after
+								transform: rotate(-135deg);
+								bottom: 0
 
 		&--third
 			padding-top: 35px
@@ -140,6 +203,5 @@
 					min-height: 10px
 					+r(1200)
 						text-align: center
-
 
 

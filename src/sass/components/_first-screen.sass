@@ -10,6 +10,8 @@
 			color: #fff
 			.blue-but
 				margin: 88px 0 39px
+				+r(768)
+					margin: 20px 0 19px
 				p
 					padding: 7px
 					width: 136px
@@ -31,23 +33,49 @@
 				line-height: 1.313em
 				font-weight: 100
 				padding-left: 4px
+				+r(992)
+					font-size: 60px
+				+r(768)
+					font-size: 48px
+				+r(738)
+					font-size: 44px
+				+r(450)
+					font-size: 36px
 			h2
 				padding-top: 66px
 				font-size: 28px
 				font-family: $second-font
 				font-weight: 100
+				+r(1200)
+
+					margin-bottom: 100px
+				+r(768)
+					text-align: center
+					margin-bottom: 40px
+					font-size: 20px
+				+r(450)
+					font-size: 16px
 		&--right
 			background-color: $second-color
 			min-height: 670px
 			font-family: $second-font
+			z-index: 1
+			+r(1200)
+				text-align: center
+				min-height: 630px
 			h3
 				font-size: 32px
 				font-weight: 100
 				line-height: 1.25em
 				padding: 75px 0 0 50px
+				+r(1200)
+					padding: 35px 0 0 0
+
 			.text--grey
 				padding: 20px 0 21px 50px
 				color: $third-text-color
+				+r(1200)
+					padding: 20px 0 21px 0
 			.form
 
 				label, input
@@ -58,6 +86,8 @@
 					font-weight: 400
 					font-size: 13px
 					color: $form-color-label
+					+r(1200)
+						padding: 20px 0 10px 0
 				input
 					margin: auto
 					width: 255px
@@ -86,9 +116,9 @@
 		position: absolute
 		top: 0
 		right: 0
-		background: url("../../img/fs-bg.png") no-repeat center
+		background: url("../../img/fs-bg.png") no-repeat
 		width: 100%
-		transform: translateX(-21vw)
-		min-height: 670px
-		z-index: -1
+
+		height: 100%
+		z-index: -10
 
